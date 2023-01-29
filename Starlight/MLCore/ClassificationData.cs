@@ -1,11 +1,9 @@
 ﻿using Microsoft.ML.Data;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Starlight.MLCore {
-    public class ClassificationData {
-
+namespace Starlight.MLCore
+{
+    public class ClassificationData
+    {
         [LoadColumn(0), ColumnName("Label")]
         public bool Classification;
 

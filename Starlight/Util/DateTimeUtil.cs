@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using System.Threading;
 
-namespace Starlight.Util {
-    public class DateTimeUtil {
-        public static DateTime? SetDatetimeEntities(String value, int index, Utterance u) {
-
+namespace Starlight.Util
+{
+    public class DateTimeUtil
+    {
+        public static DateTime? SetDatetimeEntities(String value, int index, Utterance u)
+        {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 
             DateTime parsedDate = DateTime.Parse(value);
