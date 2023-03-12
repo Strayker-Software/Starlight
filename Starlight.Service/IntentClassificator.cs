@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using Starlight.MLCore;
-using System;
-using System.Collections.Generic;
-using System.IO;
+using System.Text.Json;
 
 namespace Starlight
 {
@@ -23,7 +21,7 @@ namespace Starlight
                 _binaryClassificators.Add(new BinaryClassificator(intentName, datasetpath, false, debug));
         }
 
-        public JObject Cognize(string query, bool debug = false)
+        public string Cognize(string query, bool debug = false)
         {
             Utterance utterance = new Utterance();
             utterance.Query = query;
@@ -38,7 +36,8 @@ namespace Starlight
 
             EntityExtractors.EntityExtractorController.Fetch(utterance);
 
-            return utterance.GetResponse();
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            return JsonSerializer.Serialize(utterance, options);
         }
 
         private static List<string> GetIntentList()

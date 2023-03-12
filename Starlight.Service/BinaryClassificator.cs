@@ -1,7 +1,5 @@
 ﻿using Microsoft.ML;
 using Microsoft.ML.Data;
-using System;
-using System.IO;
 using static Microsoft.ML.DataOperationsCatalog;
 
 namespace Starlight.MLCore
@@ -27,13 +25,10 @@ namespace Starlight.MLCore
 
             TrainTestData splitDataView = LoadData(datasetPath, hasHeader);
 
-            _model = ModelPersistenceIO.LoadModel(_mlContext, datasetName, _dataView.Schema);
-
             // Disabling cache for now
             if (/*_model == null*/ true)
             {
                 _model = BuildAndTrainModel(splitDataView.TrainSet, debug);
-                ModelPersistenceIO.SaveModel(_mlContext, datasetName, _model, _dataView.Schema);
             }
             else
             {

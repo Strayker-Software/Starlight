@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Starlight.Domain\Starlight.Domain.csproj" />
+    <ProjectReference Include="..\Starlight.Service\Starlight.Service.csproj" />
+  </ItemGroup>
+
 </Project>

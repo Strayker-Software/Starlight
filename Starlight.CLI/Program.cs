@@ -4,7 +4,14 @@
     {
         private static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            IntentClassificator cc = new IntentClassificator(null, true);
+
+            while (true)
+            {
+                Console.WriteLine("Enter an utterance:");
+                Console.Write("> ");
+                Console.WriteLine(cc.Cognize(Console.ReadLine(), true));
+            }
         }
     }
 }
