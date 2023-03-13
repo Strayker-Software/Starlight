@@ -10,13 +10,14 @@
 
         public Entity()
         {
-            StartIndex = null;
-            EndIndex = null;
-            DateTime = null;
+            EntityText = string.Empty;
+            Type = string.Empty;
         }
 
-        public Entity(string entityText) : base()
+        public Entity(string entityText)
+            : base()
         {
+            Type = string.Empty;
             EntityText = entityText;
         }
     }

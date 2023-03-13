@@ -6,12 +6,15 @@
         public float Score { get; set; }
 
         public Intent()
-        { }
-
-        public Intent(string Name, float Score)
         {
-            this.Name = Name;
-            this.Score = Score;
+            Name = string.Empty;
+            Score = 0.0f;
+        }
+
+        public Intent(string name, float score)
+        {
+            Name = name;
+            Score = score;
         }
     }
 }

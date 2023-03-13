@@ -30,16 +30,17 @@
 
         public Utterance()
         {
+            _query = string.Empty;
             Intents = new List<Intent>();
             Entity = new Entity();
         }
 
         private Intent GetTopScoringIntent()
         {
-            Intent topScoringIntent = new Intent();
-            float maxValue = 0;
+            var topScoringIntent = new Intent();
+            float maxValue = 0.0f;
 
-            foreach (Intent intent in Intents)
+            foreach (var intent in Intents)
             {
                 if (intent.Score > maxValue)
                 {
