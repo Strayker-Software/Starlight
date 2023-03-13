@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Starlight.Domain.Models;
 using System.Globalization;
-using System.Threading;
 
-namespace Starlight.Util
+namespace Starlight.Service.Services
 {
     public class DateTimeUtil
     {
-        public static DateTime? SetDatetimeEntities(String value, int index, Utterance u)
+        public static DateTime? SetDatetimeEntities(string value, int index, Utterance u)
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 

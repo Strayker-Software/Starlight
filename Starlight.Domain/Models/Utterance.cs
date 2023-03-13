@@ -1,12 +1,10 @@
-﻿using System.Text;
-
-namespace Starlight
+﻿namespace Starlight.Domain.Models
 {
     public class Utterance
     {
         private string _query;
 
-        public String Query
+        public string Query
         {
             get
             {

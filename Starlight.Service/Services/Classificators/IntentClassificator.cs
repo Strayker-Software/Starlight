@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
-using Starlight.MLCore;
+﻿using Starlight.Domain.Models;
+using Starlight.Service.EntityExtractors;
 using System.Text.Json;
 
-namespace Starlight
+namespace Starlight.Service.Services.Classificators
 {
     public class IntentClassificator
     {
@@ -34,7 +34,7 @@ namespace Starlight
                 utterance.Intents.Add(new Intent("none", (float)0.8));
             }
 
-            EntityExtractors.EntityExtractorController.Fetch(utterance);
+            EntityExtractorController.Fetch(utterance);
 
             var options = new JsonSerializerOptions { WriteIndented = true };
             return JsonSerializer.Serialize(utterance, options);

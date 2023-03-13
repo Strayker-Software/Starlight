@@ -1,8 +1,10 @@
 ﻿using Microsoft.ML;
 using Microsoft.ML.Data;
+using Starlight.Domain.Models;
+using Starlight.Service.MLModels;
 using static Microsoft.ML.DataOperationsCatalog;
 
-namespace Starlight.MLCore
+namespace Starlight.Service.Services.Classificators
 {
     internal class BinaryClassificator /*: IClassificator*/
     {
@@ -90,7 +92,7 @@ namespace Starlight.MLCore
             }
         }
 
-        private TrainTestData LoadData(String datasetPath, bool hasHeader)
+        private TrainTestData LoadData(string datasetPath, bool hasHeader)
         {
             _dataView = _mlContext.Data.LoadFromTextFile<ClassificationData>(datasetPath, hasHeader: hasHeader);
             // testFraction -> Percentage of phrases compared | Default: 10%

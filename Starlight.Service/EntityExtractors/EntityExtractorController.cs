@@ -1,14 +1,13 @@
-﻿using System;
-using System.Linq;
+﻿using Starlight.Domain.Models;
 using System.Reflection;
 
-namespace Starlight.EntityExtractors
+namespace Starlight.Service.EntityExtractors
 {
     public class EntityExtractorController
     {
         public static void Fetch(Utterance u)
         {
-            String intentName = u.TopScoringIntent.Name;
+            string intentName = u.TopScoringIntent.Name;
 
             intentName = intentName.First().ToString().ToUpper() + intentName.Substring(1);
             Type classType = Type.GetType("Starlight.EntityExtraction." + intentName);

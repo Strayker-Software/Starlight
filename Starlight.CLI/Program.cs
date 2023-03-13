@@ -1,4 +1,6 @@
-﻿namespace Starlight.CLI
+﻿using Starlight.Service.Services.Classificators;
+
+namespace Starlight.CLI
 {
     internal class Program
     {

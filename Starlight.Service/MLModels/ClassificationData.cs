@@ -1,6 +1,6 @@
 ﻿using Microsoft.ML.Data;
 
-namespace Starlight.MLCore
+namespace Starlight.Service.MLModels
 {
     public class ClassificationData
     {

@@ -1,8 +1,8 @@
-﻿using Starlight.Util;
-using System;
+﻿using Starlight.Domain.Models;
+using Starlight.Service.Services;
 using System.Text.RegularExpressions;
 
-namespace Starlight.EntityExtractors
+namespace Starlight.Service.EntityExtractors
 {
     public class AddAlarm
     {
@@ -32,7 +32,7 @@ namespace Starlight.EntityExtractors
             }
         }
 
-        private static String GetEntityText(DateTime? parsedDate)
+        private static string GetEntityText(DateTime? parsedDate)
         {
             if (parsedDate?.Date.CompareTo(DateTime.Now.Date) == 0)
                 return "today";

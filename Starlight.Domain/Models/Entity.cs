@@ -1,13 +1,11 @@
-﻿using System;
-
-namespace Starlight
+﻿namespace Starlight.Domain.Models
 {
     public class Entity
     {
-        public String EntityText { get; set; }
-        public String Type { get; set; }
-        public Byte? StartIndex { get; set; }
-        public Byte? EndIndex { get; set; }
+        public string EntityText { get; set; }
+        public string Type { get; set; }
+        public byte? StartIndex { get; set; }
+        public byte? EndIndex { get; set; }
         public DateTime? DateTime { get; set; }
 
         public Entity()
