@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Starlight.Domain\Starlight.Domain.csproj" />
+    <ProjectReference Include="..\Starlight.Infrastructure\Starlight.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

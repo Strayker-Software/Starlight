@@ -1,4 +1,5 @@
 ﻿using Starlight.Domain.Models;
+using Starlight.Infrastructure.IO.Enums;
 using Starlight.Service.EntityExtractors;
 using System.Text.Json;
 
@@ -18,7 +19,7 @@ namespace Starlight.Service.Services.Classificators
                 Console.WriteLine("=============== Starlight Build ===============\n");
 
             foreach (var intentName in GetIntentList())
-                _binaryClassificators.Add(new BinaryClassificator(intentName, datasetpath, false, debug));
+                _binaryClassificators.Add(new BinaryClassificator(intentName, datasetpath, false, IOSystem.Console, debug));
         }
 
         public string Cognize(string query, bool debug = false)

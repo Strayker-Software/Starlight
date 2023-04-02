@@ -4,14 +4,28 @@ namespace Starlight.Service.Services
 {
     public class EntityUtil
     {
-        public static string GetEntityText(List<string> textList, string referenceString, int offset)
+        public static string GetEntityText(
+            List<string> textList,
+            string referenceString,
+            int offset)
         {
-            return string.Join(" ", textList.GetRange(textList.IndexOf(referenceString) + offset, textList.Count - textList.IndexOf(referenceString) - offset).ToArray());
+            return string.Join(
+                " ",
+                textList.GetRange(
+                    textList.IndexOf(referenceString) + offset,
+                    textList.Count - textList.IndexOf(referenceString) - offset)
+                .ToArray());
         }
 
-        public static string[] GetEntityTextArray(List<string> textList, string referenceString, int offset)
+        public static string[] GetEntityTextArray(
+            List<string> textList,
+            string referenceString,
+            int offset)
         {
-            return textList.GetRange(textList.IndexOf(referenceString) + offset, textList.Count - textList.IndexOf(referenceString) - offset).ToArray();
+            return textList.GetRange(
+                textList.IndexOf(referenceString) + offset,
+                textList.Count - textList.IndexOf(referenceString) - offset)
+                .ToArray();
         }
 
         public static void SetEntityIndexes(Utterance u, string entity)
